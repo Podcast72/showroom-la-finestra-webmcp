@@ -12,6 +12,10 @@ This project makes a real, already-online Joomla + Gantry 5 website agent-ready 
 
 https://www.showroomlafinestra.com
 
+## Language and discovery
+
+The business website and project content are primarily in Italian, so demo scenarios and customer requests should be performed in Italian. WebMCP makes the tools discoverable to compatible agents when they visit a site page that loads the integration; it is not a global website indexing or discovery system. For the demo, direct the agent to [https://www.showroomlafinestra.com](https://www.showroomlafinestra.com) or the Contact page. Once there, a compatible agent can discover and use the exposed WebMCP tools.
+
 ## Example interaction
 
 > “Mi si è bloccata la porta blindata a Ceprano. Potete mandare un tecnico?”
