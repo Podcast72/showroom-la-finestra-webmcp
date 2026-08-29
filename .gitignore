@@ -1,0 +1,29 @@
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs, caches, temporary files and build output
+*.log
+*.tmp
+*.swp
+*~
+__pycache__/
+.pytest_cache/
+node_modules/
+coverage/
+dist/
+build/
+
+# Local hackathon state
+.devpost-hackathon-state.json
+
+# Superseded proof-of-concept files outside this project checkpoint
+/webmcp-contact.js
+/webmcp-contact copia.js

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>Fallback senza WebMCP</title>
+  <script defer>
+    window.addEventListener('load', async function () {
+      let pass = false;
+      try {
+        const source = await fetch('../webmcp/loader.js').then(function (response) { return response.text(); });
+        const fakeWindow = { location: { search: '' } };
+        const fakeDocument = {};
+        Function('window', 'document', source)(fakeWindow, fakeDocument);
+        pass = !fakeWindow.ShowroomWebMCP;
+      } catch (error) {
+        pass = false;
+      }
+      document.body.dataset.status = pass ? 'pass' : 'fail';
+      document.getElementById('result').textContent = pass
+        ? 'PASS — loader silenzioso e sito invariato senza WebMCP'
+        : 'FAIL — inizializzazione inattesa senza WebMCP';
+    });
+  </script>
+</head>
+<body><pre id="result">Esecuzione test…</pre></body>
+</html>
