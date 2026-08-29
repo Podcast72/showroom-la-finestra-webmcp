@@ -1,6 +1,30 @@
 # Show Room La Finestra — WebMCP
 
-This project makes an existing Joomla + Gantry 5 website agent-ready through progressive enhancement. Human visitors keep using the site as they do today; compatible agents can discover structured business information, services, contact options and a confirmation-gated contact workflow.
+## Problem
+
+A conventional business website is designed for human visitors. Its services, available information and supported actions are presented visually, but are not exposed in a structured form that AI agents can reliably discover and use.
+
+## Solution
+
+This project makes a real, already-online Joomla + Gantry 5 website agent-ready through WebMCP and progressive enhancement. Human visitors keep using the existing site as they do today, while compatible agents can discover structured business information, services, contact options and a confirmation-gated contact workflow. It adds no chatbot, AI backend, Joomla Core modification or database change.
+
+## Live demo
+
+https://www.showroomlafinestra.com
+
+## Example interaction
+
+> “Mi si è bloccata la porta blindata a Ceprano. Potete mandare un tecnico?”
+
+In this scenario:
+
+- the agent discovers the available WebMCP tools;
+- identifies the relevant service and urgent local context;
+- collects the necessary customer data;
+- prepares the contact request without sending it;
+- shows the exact request summary to the user;
+- asks for explicit confirmation;
+- only after confirmation can it submit the existing Joomla form.
 
 ## What it does
 
@@ -31,7 +55,7 @@ six structured tools
 existing Joomla contact form
 ```
 
-Only this line is required in the Gantry home outline:
+The current deployment includes this loader in the Gantry outlines used by both the Home page and the Contact page:
 
 ```html
 <script src="/webmcp/loader.js" defer></script>
@@ -88,12 +112,12 @@ Serve this repository as static files and open:
 
 The confirmed-submit test uses an in-memory test transport. It does not load the public Joomla form and does not send an email.
 
-The first real form submission must be performed only after Roberto's explicit authorization.
+The first real form submission must be performed only after explicit operator authorization.
 
 ## Deployment
 
 1. Upload the five files in `webmcp/` to the same origin as the Joomla site, preserving the `/webmcp/` URL.
-2. Add the single deferred loader tag to the Gantry 5 home outline or a site-wide custom JavaScript atom.
+2. Add the single deferred loader tag to the Gantry 5 outlines used by the Home and Contact pages, or load it through an equivalent site-wide custom JavaScript atom.
 3. Clear Joomla/Gantry caches.
 4. Verify normal pages in a browser without WebMCP.
 5. Verify tool discovery in a compatible secure-context browser.
