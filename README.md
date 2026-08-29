@@ -8,6 +8,16 @@ WebMCP is more than interface automation here: it is an `Agent Interface Layer` 
 
 **Website knowledge → Agent understanding → Reasoning → Human confirmation → Safe action**
 
+## No MCP Server Required
+
+**No separate MCP server. No external agent infrastructure. The WebMCP capabilities live directly on the business website.**
+
+The WebMCP layer runs directly on the existing production website. There is no separate MCP server for an agent to discover, configure or connect to. When a compatible client visits the website, the site exposes its own structured business knowledge and capabilities through `document.modelContext`.
+
+**The agent doesn't connect to an MCP server somewhere else. It visits the website — and the website speaks for itself.**
+
+## WebMCP Challenge Submission
+
 ## WebMCP Challenge Submission
 
 Show Room La Finestra is a real Italian business with an existing production website. The Joomla website predates The WebMCP Challenge; the WebMCP agent-facing layer was designed and added during the challenge submission period.
