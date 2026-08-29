@@ -1,4 +1,4 @@
-# Show Room La Finestra — WebMCP
+# The Website That Speaks AI
 
 > **The web already has an interface for humans. We built the layer for agents.**
 
