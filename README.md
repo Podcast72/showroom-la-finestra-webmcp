@@ -1,5 +1,13 @@
 # Show Room La Finestra — WebMCP
 
+> **The web already has an interface for humans. We built the layer for agents.**
+
+**We are not teaching the agent how to use the website. We are teaching the website how to introduce the business to the agent.**
+
+WebMCP is more than interface automation here: it is an `Agent Interface Layer` through which a normal business website can explain directly to an agent who the business is, what it does, which services it provides, where it operates, its rules and constraints, the actions available, and when human confirmation is required.
+
+**Website knowledge → Agent understanding → Reasoning → Safe action**
+
 ## Problem
 
 A conventional business website is designed for human visitors. Its services, available information and supported actions are presented visually, but are not exposed in a structured form that AI agents can reliably discover and use.
