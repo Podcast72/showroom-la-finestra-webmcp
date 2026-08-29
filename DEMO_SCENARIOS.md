@@ -1,8 +1,8 @@
 # Live WebMCP Demo Scenarios
 
-The live production website is an Italian business website whose real customers primarily communicate in Italian. For this reason, the WebMCP demonstrations were intentionally performed in Italian. English translations are included for hackathon judges and international readers. The demonstrations focus on agent discovery, business understanding and reasoning, not on browser automation.
+The live production website is an Italian business website whose real customers primarily communicate in Italian. For this reason, the WebMCP demonstrations are intentionally presented in Italian. English translations are included for hackathon judges and international readers. The scenarios and reference responses are grounded in the repository implementation and focus on agent discovery, business understanding and reasoning, not on browser automation.
 
-**Website knowledge → Agent understanding → Reasoning → Safe action**
+**Website knowledge → Agent understanding → Reasoning → Human confirmation → Safe action**
 
 The purpose of these scenarios is to show how a website can expose structured business knowledge, services, operating rules, constraints and available actions directly to compatible agents.
 
@@ -16,37 +16,35 @@ The purpose of these scenarios is to show how a website can expose structured bu
 
 “Go to showroomlafinestra.com. I am a customer renovating a home in Frosinone, and I would like to replace the windows. I am mainly interested in thermal insulation, but I do not know whether to choose PVC or aluminium. Help me using the capabilities made available by the website.”
 
-### Actual agent response — Italian
+### Reference agent response — Italian
 
-“La scelta più adatta al tuo caso è PVC.
+“La soluzione da approfondire per prima è il PVC.
 
-Per una ristrutturazione a Frosinone con priorità all’isolamento termico, il sito documenta per il PVC valori precisi fino a Uw 0,73–0,74 W/m²K, isolamento acustico fino a 48 dB e sicurezza RC2/RC3. La soluzione più completa sembra LinearQ 94: Uw 0,73, 48 dB e RC3. ThermoFrame C76 e AuraSoft R76 offrono lo stesso Uw con estetica più classica o arrotondata.
+Nei dati WebMCP del sito, gli infissi in PVC sono indicati per migliorare isolamento termico, isolamento acustico, comfort ed efficienza energetica. Gli infissi in alluminio sono descritti come resistenti e versatili, adatti anche a configurazioni o dimensioni particolari e prodotti nell’officina Show Room La Finestra. Con l’isolamento termico come priorità, il PVC è quindi la raccomandazione iniziale più direttamente supportata dai dati strutturati.
 
-Preferirei invece l’alluminio a taglio termico per aperture molto grandi, forme particolari, profili più sottili o massima durata. La scheda alluminio parla di ottime prestazioni, ma non pubblica un valore Uw preciso: prima di sceglierlo chiederei quindi il valore Uw della finestra completa configurata, non soltanto quello del profilo.
+Valuterei anche l’alluminio quando resistenza, versatilità o una configurazione particolare sono requisiti determinanti. I tool non pubblicano valori numerici Uw né prezzi standard, quindi non li inventerei: la scelta tecnica finale deve essere confermata dall’azienda sulla configurazione reale.
 
-Ho usato realmente le funzioni WebMCP del sito per:
+Le funzioni WebMCP pertinenti consentono di:
 
 * confrontare i dettagli di PVC e alluminio;
-* verificare copertura e servizi;
-* individuare il percorso consigliato per Frosinone.
+* verificare copertura geografica, sopralluogo e regole sui preventivi.
 
-Il sito propone un sopralluogo gratuito e un preventivo senza impegno; per una richiesta non urgente consiglia modulo di contatto o email. Non esistono prezzi standard senza misure. Non ho inviato nulla.
+Il sito propone un sopralluogo gratuito e un preventivo senza impegno; per una richiesta non urgente consiglia una richiesta di contatto o l’email. Non esistono prezzi standard senza misure. Non ho inviato nulla.
 
 Se vuoi procedere, mi bastano numero e misure indicative delle finestre, più nome ed email: posso preparare la richiesta WebMCP e mostrartela integralmente prima dell’invio.”
 
 ### English translation
 
-“The most suitable choice for your situation is PVC.
+“The first option to investigate is PVC.
 
-For a renovation in Frosinone where thermal insulation is the priority, the website provides precise PVC performance figures of up to Uw 0.73–0.74 W/m²K, sound insulation of up to 48 dB and RC2/RC3 security. LinearQ 94 appears to be the most comprehensive solution: Uw 0.73, 48 dB and RC3. ThermoFrame C76 and AuraSoft R76 offer the same Uw with a more classic or rounded appearance.
+In the website’s WebMCP data, PVC windows are presented as a way to improve thermal insulation, sound insulation, comfort and energy efficiency. Aluminium windows are described as resistant and versatile, suitable for unusual configurations or dimensions and produced in Show Room La Finestra’s workshop. With thermal insulation as the priority, PVC is therefore the initial recommendation most directly supported by the structured data.
 
-I would instead prefer thermally broken aluminium for very large openings, unusual shapes, slimmer profiles or maximum durability. The aluminium information page describes excellent performance but does not publish a precise Uw value. Before choosing it, I would therefore ask for the Uw value of the complete configured window, not just that of the profile.
+I would also consider aluminium when resistance, versatility or a particular configuration is decisive. The tools do not publish numerical Uw values or standard prices, so I would not invent them: the final technical choice must be confirmed by the company for the actual configuration.
 
-I actually used the website’s WebMCP capabilities to:
+The relevant WebMCP capabilities make it possible to:
 
 * compare the details of PVC and aluminium;
-* verify service coverage and services;
-* identify the recommended path for Frosinone.
+* verify geographic coverage, the on-site survey and quote rules.
 
 The website offers a free on-site survey and a no-obligation quote; for a non-urgent request, it recommends the contact form or email. There are no standard prices without measurements. I have not sent anything.
 
@@ -70,29 +68,35 @@ Aiutami usando le funzionalità che il sito mette a disposizione. Se serve conta
 I am locked out of my home because the security door is jammed and I can no longer get inside. I am in Ceprano.
 Help me using the capabilities made available by the website. If the company needs to be contacted, first show me clearly what you want to send, and do not send anything without my explicit confirmation.”
 
-### Actual agent response — Italian
+### Reference first-turn response — Italian
 
-“Il sito offre un contatto WhatsApp diretto al +39 347 367 6814 e un modulo email. Per l’urgenza, WhatsApp è il canale più rapido. Il sito parla di assistenza, ma non garantisce esplicitamente un pronto intervento 24/7.
+“Per un’assistenza urgente a Ceprano, il sito indica telefono o WhatsApp come canali consigliati. Disponibilità e tempo effettivo di intervento devono comunque essere confermati dall’azienda.
 
-Questo è il messaggio esatto che propongo:
+Se vuoi usare il flusso di richiesta WebMCP del sito, per preparare una richiesta valida mi servono ancora il tuo nome e un indirizzo email. Il messaggio del cliente che proporrei è:
 
-Buongiorno, mi trovo a Ceprano e sono rimasto fuori casa perché la porta blindata si è bloccata e non riesco più a entrare. Potete intervenire con urgenza oppure indicarmi un tecnico disponibile subito? Grazie.
+Mi trovo a Ceprano e sono rimasto fuori casa perché la porta blindata si è bloccata e non riesco più a entrare. Potete confermare se è disponibile un intervento urgente?
 
-Non ho compilato né inviato nulla. Se approvi, rispondi: “Confermo l’invio WhatsApp”. Lo invierò al numero indicato tramite la funzione WhatsApp del sito.”
+Non ho preparato né inviato nulla. Dopo che mi avrai fornito nome ed email, userò `prepare_contact_request`, ti mostrerò l’anteprima esatta restituita dal sito e mi fermerò per chiedere la tua conferma esplicita. Solo dopo quella conferma potrà essere usato `submit_contact_request`, che inoltra il payload già preparato tramite il modulo Joomla esistente.”
 
 ### English translation
 
-“The website offers direct WhatsApp contact at +39 347 367 6814 and an email form. Given the urgency, WhatsApp is the fastest channel. The website mentions assistance but does not explicitly guarantee a 24/7 emergency response service.
+“For urgent assistance in Ceprano, the website recommends phone or WhatsApp. Actual availability and response time must still be confirmed by the company.
 
-This is the exact message I propose:
+If you want to use the website’s WebMCP request workflow, I still need your name and email address to prepare a valid request. The customer message I would propose is:
 
-Hello, I am in Ceprano and I am locked out of my home because the security door is jammed and I can no longer get inside. Can you respond urgently or direct me to a technician who is available immediately? Thank you.
+I am in Ceprano and I am locked out of my home because the security door is jammed and I can no longer get inside. Can you confirm whether urgent assistance is available?
 
-I have not filled in or sent anything. If you approve, reply: “I confirm the WhatsApp message.” I will send it to the listed number using the website’s WhatsApp capability.”
+I have not prepared or sent anything. After you provide your name and email address, I will use `prepare_contact_request`, show you the exact preview returned by the website and stop for your explicit confirmation. Only after that confirmation may `submit_contact_request` be used; it sends the already-prepared payload through the existing Joomla form.”
+
+### Continue through the confirmation gate
+
+The initial prompt intentionally omits two fields required by `prepare_contact_request`: customer name and email. A compliant client must ask for them instead of inventing them. Once the user supplies the missing information, the client can prepare the request and display the returned preview and `requires_confirmation: true` value. It must then stop. Only a subsequent explicit confirmation permits the immutable `requestId` to be passed to `submit_contact_request`.
+
+**Preparation does not equal execution.** Judges can demonstrate discovery, preparation, exact preview and confirmation refusal without making a real production submission.
 
 ### What this demonstrates
 
-The agent correctly understood the requested service, the urgency, the customer’s location and the available contact method. It also recognized that the company does **not** explicitly guarantee a 24/7 emergency service and respected the requirement for explicit user confirmation before an external action. The agent did not invent guarantees or availability.
+The agent correctly understands the requested service, urgency, location and available assistance channels, then identifies the customer information required by the safe contact workflow. The complete path is **WebMCP discovery → relevant assistance workflow → required customer information → prepared contact request → exact preview → explicit human confirmation → only then may the existing Joomla contact workflow be used**. No guarantee or technician availability is invented.
 
 ## What the demos are intended to prove
 

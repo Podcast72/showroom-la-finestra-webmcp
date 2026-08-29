@@ -6,7 +6,71 @@
 
 WebMCP is more than interface automation here: it is an `Agent Interface Layer` through which a normal business website can explain directly to an agent who the business is, what it does, which services it provides, where it operates, its rules and constraints, the actions available, and when human confirmation is required.
 
-**Website knowledge → Agent understanding → Reasoning → Safe action**
+**Website knowledge → Agent understanding → Reasoning → Human confirmation → Safe action**
+
+## WebMCP Challenge Submission
+
+Show Room La Finestra is a real Italian business with an existing production website. The Joomla website predates The WebMCP Challenge; the WebMCP agent-facing layer was designed and added during the challenge submission period.
+
+- This is not a simulated storefront or a website created only for the hackathon.
+- WebMCP adds an interface for compatible agents without replacing the existing human-facing Joomla + Gantry 5 website.
+- The live demo requires no authentication.
+- The production website and business data are primarily in Italian because the company and its customers operate primarily in Italian.
+
+**Project links**
+
+- **Live website:** [https://www.showroomlafinestra.com/](https://www.showroomlafinestra.com/)
+- **Demo scenarios:** [DEMO_SCENARIOS.md](DEMO_SCENARIOS.md)
+- **Source:** [Podcast72/showroom-la-finestra-webmcp](https://github.com/Podcast72/showroom-la-finestra-webmcp)
+
+## How to Test
+
+Use a WebMCP-compatible client or Google Chrome with WebMCP enabled, then open the live website. No authentication is required.
+
+### Scenario 1 — Service reasoning
+
+**Italian prompt**
+
+> “Vai su showroomlafinestra.com. Sono un cliente che sta ristrutturando casa a Frosinone e vorrei sostituire gli infissi. Mi interessa soprattutto l’isolamento termico ma non so se scegliere PVC o alluminio. Aiutami usando le funzionalità che il sito mette a disposizione.”
+
+**English translation**
+
+> “Go to showroomlafinestra.com. I am renovating a house in Frosinone and would like to replace the windows. Thermal insulation is my priority, but I don't know whether to choose PVC or aluminium. Help me using the capabilities provided by the website.”
+
+This demonstrates **WebMCP tool discovery → business and service understanding → technical comparison → grounded recommendation**.
+
+### Scenario 2 — Safe real-world action
+
+**Italian prompt**
+
+> “Mi si è bloccata la porta blindata e sono rimasto fuori casa a Ceprano. Aiutami usando le funzionalità che il sito mette a disposizione. Se serve contattare l’azienda, mostrami esattamente cosa vuoi inviare e non inviare nulla senza la mia conferma esplicita.”
+
+**English translation**
+
+> “My security door has jammed and I am locked out of my home in Ceprano. Help me using the capabilities provided by the website. If the company needs to be contacted, show me exactly what you want to send and do not send anything without my explicit confirmation.”
+
+This demonstrates **WebMCP discovery → relevant assistance workflow → required customer information → prepared contact request → exact preview → explicit human confirmation → only then may the existing Joomla contact workflow be used**.
+
+`prepare_contact_request` requires the customer's name, email and message. A compatible agent must collect the missing required information, show the exact returned preview and stop for confirmation. **Preparation does not equal execution.** Only after the user explicitly confirms may `submit_contact_request` use the existing Joomla contact form.
+
+## Tested With
+
+- ChatGPT Work with browser capabilities
+- Google Chrome with WebMCP enabled
+- WebMCP Model Context Tool Inspector in Chrome DevTools
+
+Testing covered tool discovery, business understanding, service reasoning, technical comparison, assistance workflows, request preparation and confirmation-gated actions.
+
+## Why This Is a Strong WebMCP Use Case
+
+A conventional business website exposes information visually for humans. This implementation exposes structured business meaning and bounded capabilities directly to compatible AI clients. The key idea is not browser automation: the website itself explains to the agent:
+
+- who the business is;
+- what it does;
+- which services it provides;
+- relevant rules and constraints;
+- what actions are available;
+- when human confirmation is required.
 
 ## Problem
 
@@ -16,31 +80,9 @@ A conventional business website is designed for human visitors. Its services, av
 
 This project makes a real, already-online Joomla + Gantry 5 website agent-ready through WebMCP and progressive enhancement. Human visitors keep using the existing site as they do today, while compatible agents can discover structured business information, services, contact options and a confirmation-gated contact workflow. It adds no chatbot, AI backend, Joomla Core modification or database change.
 
-## Live demo
-
-https://www.showroomlafinestra.com
-
-## Demo scenarios
-
-Real WebMCP tests were performed with an AI agent against the live Italian website. The documented scenarios show how the agent discovered structured business knowledge, reasoned about customer needs and proposed safe next steps; see [Live WebMCP Demo Scenarios](DEMO_SCENARIOS.md).
-
 ## Language and discovery
 
 The business website and project content are primarily in Italian, so demo scenarios and customer requests should be performed in Italian. WebMCP makes the tools discoverable to compatible agents when they visit a site page that loads the integration; it is not a global website indexing or discovery system. For the demo, direct the agent to [https://www.showroomlafinestra.com](https://www.showroomlafinestra.com) or the Contact page. Once there, a compatible agent can discover and use the exposed WebMCP tools.
-
-## Example interaction
-
-> “Mi si è bloccata la porta blindata a Ceprano. Potete mandare un tecnico?”
-
-In this scenario:
-
-- the agent discovers the available WebMCP tools;
-- identifies the relevant service and urgent local context;
-- collects the necessary customer data;
-- prepares the contact request without sending it;
-- shows the exact request summary to the user;
-- asks for explicit confirmation;
-- only after confirmation can it submit the existing Joomla form.
 
 ## What it does
 
@@ -151,4 +193,4 @@ No Joomla Core or database modification is required.
 
 ## Repository hygiene
 
-Do not commit hosting, FTP or Joomla credentials, customer data, API keys, tokens or other private configuration. The project is licensed under the MIT License.
+Do not commit hosting, FTP or Joomla credentials, customer data, API keys, tokens or other private configuration. The project is licensed under the [MIT License](LICENSE).
