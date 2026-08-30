@@ -14,9 +14,37 @@ WebMCP is more than interface automation here: it is an `Agent Interface Layer` 
 
 The WebMCP layer runs directly on the existing production website. There is no separate MCP server for an agent to discover, configure or connect to. When a compatible client visits the website, the site exposes its own structured business knowledge and capabilities through `document.modelContext`.
 
-**The agent doesn't connect to an MCP server somewhere else. It visits the website — and the website speaks for itself.**
+**The agent doesn't connect to an MCP server somewhere else. It visits the website — and the website speaks for itself.** 
 
-## WebMCP Challenge Submission
+## Page-Scoped Agent Context
+
+WebMCP is intentionally **not enabled globally across the entire website**.
+
+Instead, each page can expose its own dedicated set of knowledge, tools, rules and actions to the agent.
+
+This means the agent does not receive one large, generic interface for the whole website.
+
+It receives a **context-specific interface based on the page it is currently visiting**.
+
+For example:
+
+- the homepage can explain who the company is, what it does and which services are available;
+- a service page can expose detailed knowledge, technical constraints and service-specific guidance;
+- the contact page can expose contact options, request preparation and safe submission actions;
+- other pages can expose nothing at all if no agent interaction is needed.
+
+In other words:
+
+**The website does not have one AI interface.  
+Every page can become its own AI interface.**
+
+This keeps agent context smaller, more relevant and easier to control, while allowing the website to progressively expose capabilities only where they actually make sense.
+
+**Page → Context → Knowledge → Tools → Safe Actions**
+
+For humans, pages organize information.
+
+For agents, pages can organize capabilities.
 
 ## WebMCP Challenge Submission
 
